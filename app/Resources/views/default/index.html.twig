@@ -2,22 +2,22 @@
 
 {% block content %}
     <header>
-        <span class="avatar"><img src="{{ asset('images/sammy.png') }}" alt="" /></span>
-        <h1>Hacktoberfest</h1>
-        <p>Verification Script</p>
+        <span class="avatar"><img src="http://placehold.it/150x150" alt="" /></span>
+        <h1>#30contribs</h1>
+        <p>Script de verificação</p>
     </header>
 
     {% if app.user and is_granted('IS_AUTHENTICATED_REMEMBERED') %}
-        <h2>Hi there, <strong>{{ app.user.username }}</strong> ! </h2>
+        <h2>Olá, <strong>{{ app.user.username }}</strong> ! </h2>
         <div id="verification">
-            <p>Click the button below to run the verification script.<br>This operation might take a couple minutes to complete.</p>
-            <p><a href="#" id="button-verify" onclick="verifyUserPullRequests()" class="button"><span class="fa fa-github-square"></span> Run Verification</a> </p>
+            <p>Clique no botão abaixo para realizar a verificação.<br>Este processo pode levar algum tempo.</p>
+            <p><a href="#" id="button-verify" onclick="verifyUserPullRequests()" class="button"><span class="fa fa-github-square"></span> Executar verificação</a> </p>
         </div>
-        <p class="small">You are currently logged in as @{{ app.user.username }}. <a href="{{ path('sauth_logout') }}">Click here to log out</a>.</p>
+        <p class="small">Você está logado como @{{ app.user.username }}. <a href="{{ path('sauth_logout') }}">Clique aqui para fazer logout</a>.</p>
     {% else %}
 
         <footer>
-            <a href="{{ path('sauth_connect', {service: 'github'}) }}" class="button"><span class="fa fa-github"></span> Sign in with Github</a>
+            <a href="{{ path('sauth_connect', {service: 'github'}) }}" class="button"><span class="fa fa-github"></span> Login com o Github </a>
         </footer>
     {% endif %}
 {% endblock %}
